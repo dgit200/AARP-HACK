@@ -18,3 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, false);
 }, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+  var closeButton = document.getElementById('button');
+  closeButton.addEventListener('click', function() {
+
+    chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.remove(tab.id, function(){});
+
+    });
+  }, false);
+}, false);
